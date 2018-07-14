@@ -251,7 +251,7 @@ var xpl = xml(code);
        //     }
 
 // SuperWeb reader*/
-var href = location.protocol+location.host+location.pathname;
+var href = location.protocol+"//"+location.host+location.pathname;
 href = href.split(".");
 href[href.length-1] = "xml";
 href = href.join(".")
