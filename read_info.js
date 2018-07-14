@@ -8,10 +8,10 @@
                 }
         }});return rtrn;
             }
-var config = apiLib("config.json");
+var config = require("config.json");
 var name = location.protocol+location.host+location.pathname;
 var i = 0;
 while(!(config[i].name = name)) {
 i++;
 }
-apiLib.get(config[i].openWith);
+require(config[i].openWith);
