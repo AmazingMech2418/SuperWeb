@@ -10,3 +10,8 @@ $.noConflict
             }
 var config = apiLib("config.json");
 var name = location.protocol+location.host+location.pathname;
+var i = 0;
+while(!(config[i].name = name)) {
+i++;
+}
+document.documentElement=apiLib.get(config[i].openWith);
