@@ -9,7 +9,7 @@
         }});return rtrn;
             }
 var config = require("config.json");
-var name = location.protocol+location.host+location.pathname;
+var name = location.protocol+"//"+location.host+location.pathname;
 var i = 0;
 while(!(config[i].name = name)) {
 i++;
