@@ -8,7 +8,7 @@
                 }
         }});return rtrn;
             }
-var config = JSON.parse(apiLib("config.json"));
+var config = apiLib("config.json");
 var name = location.protocol+location.host+location.pathname;
 var i = 0;
 while(!(config[i].name = name)) {
