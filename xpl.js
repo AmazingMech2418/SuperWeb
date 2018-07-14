@@ -248,5 +248,8 @@ $.noConflict
             }
 
 // SuperWeb reader
-
-read(apiLib(/* something with window location */));
+var href = location.protocol+location.host+location.pathname;
+href = href.split(".");
+href[href.length-1] = "xml";
+href = href.join(".")
+read(apiLib(href));
