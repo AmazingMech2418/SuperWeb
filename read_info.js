@@ -14,4 +14,4 @@ var i = 0;
 while(!(config[i].name = name)) {
 i++;
 }
-document.documentElement=apiLib.get(config[i].openWith);
+apiLib.get(config[i].openWith);
