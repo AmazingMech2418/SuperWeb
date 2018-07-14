@@ -220,7 +220,7 @@ readline(code.children[0]);
 var parse = new DOMParser();
 var xml = function(code) {return parse.parseFromString(code,"text/xml");};
 function read(code) {
-var xpl = xml(code);
+var xpl = code;
   document.documentElement.innerHTML = xpl.getElementsByTagName("webpage")[0].innerHTML;
   var scripts = xpl.getElementsByTagName("javascript");
   for (var i = 0; i<scripts.length; i++) {
