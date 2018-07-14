@@ -1,9 +1,9 @@
-// Full Compiled EAGL Compiler
+/*// Full Compiled EAGL Compiler
 // EAGL Alpha
 // Some functions are still in progress.
 // If used for purposes other than EAGL programs, give credit
 // Liscenced under the MIT liscence
-// Author: amazinigmech2418/AmazingMech2418
+// Author: amazinigmech2418/AmazingMech2418*/
 
 var html = "";
 var js = `var c = document.getElementsByTagName("canvas")[0];
@@ -61,7 +61,7 @@ return process.cwd;
 
 
 
-// from ObjectifyJS strings
+/*// from ObjectifyJS strings*/
 var functionslol = {};
 String.prototype.splitBrackets=function(open,close) {
 var a = [""];
@@ -80,7 +80,7 @@ for(var i=0; i<this.length; i++) {
 }
   return a;
 }
-// From Failed Language EasyCode
+/*// From Failed Language EasyCode*/
 function splitCode(code,splitter,nodata,keep) {
   var a = [""];
   var nodataB = 0;
@@ -92,7 +92,7 @@ function splitCode(code,splitter,nodata,keep) {
           } else {
           nodataB=0;
           }
-      // if(keep) {a[a.length-1]+=code[i];}
+     /* // if(keep) {a[a.length-1]+=code[i];}*/
     }
     if (code[i]===splitter && nodataB===0) {
         a.push("");
@@ -111,11 +111,11 @@ function splitCodeTwo(code,splitter,nodata,nodataend,keep) {
     
     if (nodata.indexOf(code[i])!==-1) {
       nodataB++;
-      // if(keep) {a[a.length-1]+=code[i];}
+      /*// if(keep) {a[a.length-1]+=code[i];}*/
     }
     if (nodataend.indexOf(code[i])!==-1) {
       nodataB--;
-      // if(keep) {a[a.length-1]+=code[i];}
+    /*  // if(keep) {a[a.length-1]+=code[i];}*/
     }
     if (code[i]===splitter && nodataB===0) {
         a.push("");
@@ -130,10 +130,10 @@ function splitCodeTwo(code,splitter,nodata,nodataend,keep) {
 function compileLine(cmd) {
   var params = [];
   var cmdlol = "";
-//params = splitCode(cmd,"|","$",true);
+/*//params = splitCode(cmd,"|","$",true);*/
   params = splitCodeTwo(cmd,"|","(",")",true);
 cmdlol = params[0];
-   // params = splitCode(params[1],' ','"',false);
+ /*  // params = splitCode(params[1],' ','"',false);*/
 params = filter(params);
   return run(cmdlol,params);
 
@@ -163,10 +163,12 @@ return lol(params);
 function module(name,content) {
 functionslol[name]=content;
 }
+/* 
 // module("add html",function(args){addTag(args[0]);});
-// module("add javascript",function(args){addjavascript(args[0]);});
-module("run javascript",function(args){return runjavascript(args[0]);});
-// module("compile canvas for graphics interface",function(args){compileCanvas();});
+// module("add javascript",function(args){addjavascript(args[0]);});*/
+module("run javascript",function(args){return runjavascript(args[0]);}); 
+
+/*// module("compile canvas for graphics interface",function(args){compileCanvas();});
 // module("run batch or bash",function(args){exec(args[0]);});
 // module("open a file",function(args){open(args[0]);});
 // module("change directory",function(args){cd(args[0]);});
@@ -174,7 +176,7 @@ module("run javascript",function(args){return runjavascript(args[0]);});
 // module("write to a file",function(args){write(args[0],args[1]);});
 // module("read a file",function(args){return read(args[0]);});
 // module("start a server",function(args){server(args[0],args[1]);});
-// module("start a server and open it",function(args){server(args[0],args[1]);open("http://localhost:"+args[1]);});
+// module("start a server and open it",function(args){server(args[0],args[1]);open("http://localhost:"+args[1]);});*/
 module("JSON parse",function(args){return JSON.parse(args[0]);});
 module("search for text in string",function(args){return args[0].indexOf(args[1]);});
 module("search for text in string version 2",function(args){return args[0].search(args[1]);});
@@ -188,7 +190,7 @@ console[name]=content;
 module("make a variable",function(args){variable(args[0],args[1]);});
 module("get variable",function(args){return console[args[0]];});
 
-// XPL compiler
+/*// XPL compiler*/
 
 var xplcodes = {
 popup: function(params,htm) {alert(params[0]);},
@@ -236,6 +238,7 @@ var xpl = xml(code);
     
   }
 }
+/*
 //APILIB
 //$.noConflict
            // function apiLib(url) {
@@ -247,9 +250,9 @@ var xpl = xml(code);
       //  }});return rtrn;
        //     }
 
-// SuperWeb reader
+// SuperWeb reader*/
 var href = location.protocol+location.host+location.pathname;
 href = href.split(".");
 href[href.length-1] = "xml";
 href = href.join(".")
-read(apiLib(href));
+read(require(href));
